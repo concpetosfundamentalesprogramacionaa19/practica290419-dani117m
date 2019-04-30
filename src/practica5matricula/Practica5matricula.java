@@ -26,39 +26,52 @@ public class Practica5matricula {
     int civil;
     int carga_f;
     // 
-    int costo= 1330;
+    double costo;
+    double costof;
  
     // Escribir y leer 
     // lugar de origen 
-    System.out.println("1: Zamora o 2: Loja 3: otras \n Ingrese la ciudad de origen");
+    System.out.println("1: Zamora \n2: Loja \n3: otras \n"
+            + " Ingrese la ciudad de origen");
     lugar_o = entrada.nextInt();
     // edad actual
     System.out.println("Ingrese su edad ");
     edad = entrada.nextInt();
     // estado civil 
-    System.out.println("Ingrese su estado civil altual");
+    System.out.println("1: Casado \n2: Soltero \n Ingrese su estado civil altual");
     civil = entrada.nextInt();
     // numero de hijos o carga familiar 
     System.out.println("Ingrese el numero de hijos que tiene ");
     carga_f = entrada.nextInt();
     
-    
+    double costo1 = descuentos.des1;
+    double costo2 = descuentos.des2;
+    double costo3 = descuentos.des3;
+    double costo4 = descuentos.des4;
     
     //
     if (lugar_o >= 1 && lugar_o <= 2){ 
-      des1 = des1  ;
+      costo = costo1  ;
+    }else{
+     costo1 = 0;    
     }
     if (edad >017 && edad <=20 ){
-      costo= des2-costo;
+      costo = costo2;
+    }else{
+    costo2 = 0;
     }
     if (civil ==1){
-      costo= des3; 
+      costo = costo3; 
+    }else{
+    costo3 = 0;
     }
     if (carga_f >=1){
-      costo= des4;  
+      costo= costo4;  
+    }else{
+        costo4 = 0; 
     }
-    costof = (des1+des2+des3+des4)-1330+(1330*0.02);
-    System.out.printf("%s %d\n", costof);
+    costof = 1330-(costo1+costo2+costo3+costo4)+(1330*0.02);
+    System.out.printf("Su descuento total fue de %s2 \n", costof);
     
   }  
     
